@@ -343,8 +343,15 @@ void process_item (int rectype, int reclen, unsigned char *rec) {
 				*pcell=(unsigned char *)strdup(buf);
 			} else if (rec[6]==2) {
 				/*error*/
-				char buf[6]="ERROR";
-				*pcell=(unsigned char *)strdup(buf);
+				char buf[]="ERROR";
+				if (rec[8]==7)
+					*pcell=(unsigned char *)strdup("DIV/0!");
+				else if (rec[8]==15)
+					*pcell=(unsigned char *)strdup("NULL!");
+				else if (rec[8]==29)
+					*pcell=(unsigned char *)strdup("NAME?");
+				else
+					*pcell=(unsigned char *)strdup("ERROR");
 			} else if (rec[6]==0) {
 				saved_reference=pcell;
 			}   

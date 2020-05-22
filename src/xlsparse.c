@@ -354,11 +354,11 @@ void process_item (int rectype, int reclen, unsigned char *rec) {
 					*pcell=(unsigned char *)strdup("ERROR");
 			} else if (rec[6]==0) {
 				saved_reference=pcell;
-			}   
+			}
 		} else {
 			int format_code=getshort(rec,4);
 			*pcell=(unsigned char *)strdup(format_double(rec,6,format_code));
-		}		 
+		}
 		break;
 	}
 	case STRING: {

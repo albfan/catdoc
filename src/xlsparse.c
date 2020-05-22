@@ -339,7 +339,7 @@ void process_item (int rectype, int reclen, unsigned char *rec) {
 			if (rec[6]==1) {
 				/*boolean*/
 				char buf[2]="0";
-				buf[0]+=rec[9];
+				buf[0]+=rec[8];
 				*pcell=(unsigned char *)strdup(buf);
 			} else if (rec[6]==2) {
 				/*error*/

@@ -334,6 +334,25 @@ void process_item (int rectype, int reclen, unsigned char *rec) {
 		row = getshort(rec,0)-startrow; 
 		col = getshort(rec,2);
 		pcell=allocate(row,col);
+		/*
+	        printf("cell %d,%d\n", row, col);
+		printf("rec0 %d\n", rec[0]);
+		printf("rec1 %d\n", rec[1]);
+		printf("rec2 %d\n", rec[2]);
+		printf("rec3 %d\n", rec[3]);
+		printf("rec4 %d\n", rec[4]);
+		printf("rec5 %d\n", rec[5]);
+		printf("rec6 %d\n", rec[6]);
+		printf("rec7 %d\n", rec[7]);
+		printf("rec8 %d\n", rec[8]);
+		printf("rec9 %d\n", rec[9]);
+		printf("rec10 %d\n", rec[10]);
+		printf("rec11 %d\n", rec[11]);
+		printf("rec12 %d\n", rec[12]);
+		printf("rec13 %d\n", rec[13]);
+		printf("rec14 %d\n", rec[14]);
+		printf("rec15 %d\n", rec[15]);
+		*/
 		if (((unsigned char)rec[12]==0xFF)&&(unsigned char)rec[13]==0xFF) {
 			/* not a floating point value */
 			if (rec[6]==1) {
